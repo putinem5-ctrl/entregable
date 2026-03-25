@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthy Fit | Fitness con Propósito</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@300;400;700&display=swap');
+
+        :root {
+            --brand-orange: #ff8c00;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .nav-logo {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .accent-orange { color: var(--brand-orange); }
+        .bg-orange { background-color: var(--brand-orange); }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('WhatsApp Image 2026-03-25 at 7.59.41 AM.jpeg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .marquee-container {
+            background: #000;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 10px 0;
+            border-bottom: 2px solid var(--brand-orange);
+        }
+
+        .marquee-text {
+            display: inline-block;
+            animation: scroll 25s linear infinite;
+            color: white;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(100%); }
+            to { transform: translateX(-100%); }
+        }
+
+        .service-card {
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            height: 250px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .nav-link:hover {
+            color: var(--brand-orange);
+            border-bottom: 2px solid var(--brand-orange);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <!-- Navegación -->
+    <nav class="fixed w-full z-50 bg-black text-white px-6 py-4 flex justify-between items-center shadow-2xl">
+        <div class="flex items-center space-x-2">
+            <img src="file_000000002a9071f5aa695727bc4b9c6b.png" alt="Healthy Fit Logo" class="h-10">
+            <span class="nav-logo text-2xl tracking-tighter">HEALTHY <span class="accent-orange">FIT</span></span>
+        </div>
+        <div class="hidden md:flex space-x-6 font-bold text-sm tracking-widest uppercase">
+            <a href="#inicio" class="nav-link transition py-1">Inicio</a>
+            <a href="#nosotros" class="nav-link transition py-1">Nosotros</a>
+            <a href="#servicios" class="nav-link transition py-1">Actividades</a>
+            <a href="#contacto" class="bg-orange text-black px-4 py-2 rounded hover:bg-white transition">Únete</a>
+        </div>
+        <button class="md:hidden text-2xl" onclick="toggleMenu()"><i class="fas fa-bars"></i></button>
+    </nav>
+
+    <!-- Menú Móvil -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black z-40 hidden flex-col items-center justify-center space-y-8 text-white text-3xl font-bold uppercase">
+        <a href="#inicio" onclick="toggleMenu()">Inicio</a>
+        <a href="#nosotros" onclick="toggleMenu()">Nosotros</a>
+        <a href="#servicios" onclick="toggleMenu()">Actividades</a>
+        <a href="#contacto" onclick="toggleMenu()" class="accent-orange">Contacto</a>
+    </div>
+
+    <!-- Hero -->
+    <header id="inicio" class="hero-section h-screen flex items-center justify-center text-center px-4">
+        <div class="max-w-4xl">
+            <img src="file_000000002a9071f5aa695727bc4b9c6b.png" alt="Healthy Fit Big Logo" class="h-32 mx-auto mb-8 animate-bounce">
+            <h1 class="text-5xl md:text-8xl text-white mb-4">ENTRENA CON <span class="accent-orange">CORAZÓN</span></h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light italic">"Más que un gimnasio, una comunidad sin fines de lucro transformando vidas."</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#servicios" class="bg-orange text-black font-bold px-10 py-4 uppercase tracking-tighter hover:scale-105 transition">Ver Actividades</a>
+                <a href="#nosotros" class="border-2 border-white text-white font-bold px-10 py-4 uppercase tracking-tighter hover:bg-white hover:text-black transition">Nuestra Misión</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquesina de Anuncios -->
+    <div class="marquee-container">
+        <div class="marquee-text">
+            <span>🚀 ¡NUEVA CLASE DE CYCLING MAÑANA 7:00 AM! • 🍎 TALLER DE NUTRICIÓN GRATUITO ESTE VIERNES • 💪 ÚNETE AL EQUIPO DE VOLUNTARIOS • 🔥 PROMOCIÓN DE APERTURA: 2X1 EN INSCRIPCIONES • 🧘‍♀️ YOGA COMUNITARIO LOS DOMINGOS •</span>
+            <span>🚀 ¡NUEVA CLASE DE CYCLING MAÑANA 7:00 AM! • 🍎 TALLER DE NUTRICIÓN GRATUITO ESTE VIERNES • 💪 ÚNETE AL EQUIPO DE VOLUNTARIOS • 🔥 PROMOCIÓN DE APERTURA: 2X1 EN INSCRIPCIONES • 🧘‍♀️ YOGA COMUNITARIO LOS DOMINGOS •</span>
+        </div>
+    </div>
+
+    <!-- Nosotros / Misión -->
+    <section id="nosotros" class="py-24 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+        <div class="relative">
+            <img src="WhatsApp Image 2026-03-25 at 8.04.09 AM.jpeg" alt="Healthy Fit Team" class="rounded-lg shadow-2xl relative z-10">
+            <div class="absolute -top-4 -left-4 w-full h-full border-4 border-orange-500 rounded-lg -z-0"></div>
+        </div>
+        <div>
+            <h2 class="text-5xl mb-6">Nuestra <span class="accent-orange">Misión Social</span></h2>
+            <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                Healthy Fit nació con la convicción de que el fitness de alta calidad no debe ser un privilegio, sino un derecho accesible para toda la comunidad. Como organización sin fines de lucro, reinvertimos cada recurso en mejores equipos, programas de salud y apoyo para quienes más lo necesitan.
+            </p>
+            <div class="grid grid-cols-2 gap-6 mb-8">
+                <div class="p-4 bg-white shadow-md border-l-4 border-orange-500">
+                    <h4 class="font-bold uppercase text-sm">Inclusión</h4>
+                    <p class="text-xs text-gray-500">Programas para todas las edades y capacidades.</p>
+                </div>
+                <div class="p-4 bg-white shadow-md border-l-4 border-orange-500">
+                    <h4 class="font-bold uppercase text-sm">Bienestar</h4>
+                    <p class="text-xs text-gray-500">Físico, mental y social en un solo lugar.</p>
+                </div>
+            </div>
+            <a href="#contacto" class="inline-block bg-black text-white px-8 py-3 font-bold uppercase tracking-widest hover:bg-orange-500 transition">Saber más</a>
+        </div>
+    </section>
+
+    <!-- Actividades y Servicios -->
+    <section id="servicios" class="bg-white py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-5xl mb-4">Nuestras <span class="accent-orange">Actividades</span></h2>
+                <p class="text-gray-500 uppercase tracking-widest text-sm">Variedad, energía y resultados</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Zumba -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-24 at 7.45.15 AM.jpeg" alt="Clase de Zumba">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Zumba Party</h3>
+                        <p class="text-gray-600 text-sm mb-4">Quema calorías al ritmo de la música en un ambiente lleno de alegría y comunidad.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Lunes a Viernes</span>
+                    </div>
+                </div>
+
+                <!-- Cycling -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-25 at 7.59.01 AM.jpeg" alt="Indoor Cycling">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Indoor Cycling</h3>
+                        <p class="text-gray-600 text-sm mb-4">Resistencia y potencia cardiovascular con los mejores instructores y música motivante.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Mañana y Noche</span>
+                    </div>
+                </div>
+
+                <!-- Personal Training -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-25 at 8.00.41 AM.jpeg" alt="Personal Training">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Entrenamiento Guiado</h3>
+                        <p class="text-gray-600 text-sm mb-4">Atención personalizada para asegurar que cada movimiento cuente y evitar lesiones.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Planes a Medida</span>
+                    </div>
+                </div>
+
+                <!-- Nutrición -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-25 at 8.01.47 AM.jpeg" alt="Nutrición Saludable">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Nutrición Social</h3>
+                        <p class="text-gray-600 text-sm mb-4">Aprende a alimentar tu cuerpo de forma económica y saludable con nuestros expertos.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Talleres Grupales</span>
+                    </div>
+                </div>
+
+                <!-- Masajes -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-25 at 8.02.06 AM.jpeg" alt="Masaje Terapéutico">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Recuperación</h3>
+                        <p class="text-gray-600 text-sm mb-4">Espacio de relajación y descarga muscular para mantener tu cuerpo en equilibrio.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Cita Previa</span>
+                    </div>
+                </div>
+
+                <!-- Estiramiento/Core -->
+                <div class="service-card bg-gray-50 rounded-lg shadow-lg">
+                    <img src="WhatsApp Image 2026-03-25 at 8.00.26 AM.jpeg" alt="Core Training">
+                    <div class="p-6">
+                        <h3 class="text-2xl mb-2">Core & Flex</h3>
+                        <p class="text-gray-600 text-sm mb-4">Fortalece tu zona media y mejora tu movilidad para una vida diaria sin dolores.</p>
+                        <span class="text-orange-500 font-bold text-xs uppercase">Clases Intensivas</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publicidad Dinámica -->
+    <section class="py-12 bg-black">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="border-2 border-dashed border-orange-500 p-8 flex flex-col md:flex-row items-center justify-between text-white">
+                <div class="mb-6 md:mb-0">
+                    <span class="bg-orange text-black px-2 py-1 text-xs font-bold mb-2 inline-block">SPONSOR</span>
+                    <h3 class="text-3xl font-bold">TU MARCA AQUÍ</h3>
+                    <p class="text-gray-400">Apoya a Healthy Fit y llega a miles de personas en nuestra comunidad.</p>
+                </div>
+                <button class="bg-white text-black font-bold px-8 py-3 hover:bg-orange-500 transition uppercase text-sm">Anúnciate con nosotros</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-24 px-6 bg-gray-50">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row gap-16">
+            <div class="md:w-1/3">
+                <h2 class="text-5xl mb-8">Únete al <br><span class="accent-orange">Cambio</span></h2>
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-black text-white p-4 rounded-full"><i class="fas fa-phone"></i></div>
+                        <div>
+                            <p class="text-xs uppercase text-gray-500 font-bold">Llámanos</p>
+                            <p class="font-bold">+123 456 789</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-black text-white p-4 rounded-full"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <p class="text-xs uppercase text-gray-500 font-bold">Escríbenos</p>
+                            <p class="font-bold">hola@healthyfit.org</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="bg-black text-white p-4 rounded-full"><i class="fas fa-map-marker-alt"></i></div>
+                        <div>
+                            <p class="text-xs uppercase text-gray-500 font-bold">Visítanos</p>
+                            <p class="font-bold">Calle de la Salud, 45. Edificio Comunitario.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="md:w-2/3 bg-white p-10 shadow-xl rounded-xl">
+                <form onsubmit="handleSubmit(event)" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="md:col-span-1">
+                        <label class="block text-xs font-bold uppercase mb-2">Nombre Completo</label>
+                        <input type="text" required class="w-full border-b-2 border-gray-200 py-3 focus:border-orange-500 outline-none transition">
+                    </div>
+                    <div class="md:col-span-1">
+                        <label class="block text-xs font-bold uppercase mb-2">Correo Electrónico</label>
+                        <input type="email" required class="w-full border-b-2 border-gray-200 py-3 focus:border-orange-500 outline-none transition">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase mb-2">Interés</label>
+                        <select class="w-full border-b-2 border-gray-200 py-3 focus:border-orange-500 outline-none transition">
+                            <option>Inscribirme como Socio</option>
+                            <option>Ser Voluntario</option>
+                            <option>Donaciones / Patrocinios</option>
+                            <option>Otro</option>
+                        </select>
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-xs font-bold uppercase mb-2">¿Cómo podemos ayudarte?</label>
+                        <textarea rows="4" class="w-full border-b-2 border-gray-200 py-3 focus:border-orange-500 outline-none transition"></textarea>
+                    </div>
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-orange text-black font-bold py-4 uppercase tracking-widest hover:bg-black hover:text-white transition">Enviar Solicitud</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center border-b border-gray-800 pb-12">
+            <div class="flex items-center space-x-3 mb-8 md:mb-0">
+                <img src="file_000000002a9071f5aa695727bc4b9c6b.png" alt="Healthy Fit Footer" class="h-12">
+                <span class="text-3xl font-bold tracking-tighter uppercase">HEALTHY <span class="accent-orange">FIT</span></span>
+            </div>
+            <div class="flex space-x-6 text-2xl">
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-orange-500 transition"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-12 flex flex-col md:flex-row justify-between text-xs text-gray-500 uppercase tracking-widest text-center md:text-left">
+            <p>&copy; 2026 HEALTHY FIT NGO. TODOS LOS DERECHOS RESERVADOS.</p>
+            <div class="mt-4 md:mt-0 space-x-4">
+                <a href="#" class="hover:text-white">Privacidad</a>
+                <a href="#" class="hover:text-white">Términos</a>
+                <a href="#" class="hover:text-white">Donaciones</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const originalText = btn.innerText;
+            btn.innerText = 'ENVIANDO...';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                const toast = document.createElement('div');
+                toast.className = 'fixed bottom-10 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-8 py-4 rounded-full shadow-2xl font-bold z-[100] animate-bounce';
+                toast.innerText = '¡Solicitud enviada! Nos vemos pronto en Healthy Fit.';
+                document.body.appendChild(toast);
+
+                setTimeout(() => {
+                    toast.remove();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    e.target.reset();
+                }, 3000);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
